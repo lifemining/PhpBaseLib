@@ -1,0 +1,14 @@
+{
+  "name": "lifemining/PhpBaseLib",
+  "description": "A library for Php with a panel of tools",
+  "keywords": ["PHP", "lib"],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Lifemining\\PhpBaseLib\\": "src/"
+    }
+  }
+}
