@@ -1,6 +1,6 @@
 <?php
 
-namespace Tools;
+namespace Lifemining\PhpBaseLib\Tools;
 
 use ReflectionClass;
 
