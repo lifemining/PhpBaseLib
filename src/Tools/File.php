@@ -41,7 +41,7 @@ class File
 
     public static function getNbLines($file, $offset = null)
     {
-        return String::getNbLines(file_get_contents($file), $offset);
+        return Str::getNbLines(file_get_contents($file), $offset);
     }
 
     public static function getUniqueName($dir, $baseName, $extension, $max = 9)
@@ -185,13 +185,8 @@ class File
             case 'ps':
                 return 'application/postscript';
 
-            // ms office
-            case 'doc':
-                return 'application/msword';
             case 'rtf':
                 return 'application/rtf';
-            case 'xls':
-                return 'application/vnd.ms-excel';
 
             // open office
             case 'odt':
@@ -202,9 +197,6 @@ class File
             case "ppt" :
             case "pps" :
                 return "application/vnd.ms-powerpoint";
-
-            case "rtf" :
-                return "application/rtf";
 
             case "pdf" :
                 return "application/pdf";
@@ -244,9 +236,6 @@ class File
             case "wmv" :
                 return "video/x-ms-wmv";
 
-            case "mov" :
-                return "video/quicktime";
-
             case "zip" :
                 return "application/zip";
 
@@ -258,10 +247,11 @@ class File
 
             case 'rar':
                 return 'application/x-rar-compressed';
+
             case 'exe':
-                return 'application/x-msdownload';
             case 'msi':
                 return 'application/x-msdownload';
+
             case 'cab':
                 return 'application/vnd.ms-cab-compressed';
 

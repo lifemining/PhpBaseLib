@@ -192,9 +192,10 @@ class ArrayUtil {
 
     /**
      *
-     * @param type $tree
-     * @param type $array_path
-     * @return type
+     * @param array $aArray
+     * @param array $aDimensions
+     * @param mixed $mDefault
+     * @return mixed
      */
     public static function getInArray (array $aArray, array $aDimensions, $mDefault = null) {
         if ($aDimensions && count($aDimensions)) {
@@ -246,15 +247,15 @@ class ArrayUtil {
         ), $options);
         return "array("
             . $options['eof']
-            . String::repeatNstr($options['tab'], $options['nTab'])
+            . Str::repeatNstr($options['tab'], $options['nTab'])
             . self::joinWithPrefixAndSuffix(
                 $aArray,
-                ",".$options['eof'].String::repeatNstr($options['tab'], $options['nTab']),
+                ",".$options['eof'].Str::repeatNstr($options['tab'], $options['nTab']),
                 $options['prefix'],
                 $options['suffix']
             )
             . $options['eof']
-            . String::repeatNstr($options['tab'], $options['nTab'] - 1)
+            . Str::repeatNstr($options['tab'], $options['nTab'] - 1)
             . ")";
     }
 
@@ -267,7 +268,7 @@ class ArrayUtil {
         ), $options);
         return str_replace(
             array("=> \n  ",    $options['eof']),
-            array("=> ",        $options['eof'].String::repeatNstr($options['tab'], $options['nTab'])),
+            array("=> ",        $options['eof'].Str::repeatNstr($options['tab'], $options['nTab'])),
             var_export($aArray, true)
         );
     }

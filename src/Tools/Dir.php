@@ -29,7 +29,7 @@ class Dir
 
     public static function addSepToEnd($dir, $sep = '/')
     {
-        return String::addCharToEnd($dir, $sep);
+        return Str::addCharToEnd($dir, $sep);
     }
 
 
@@ -117,8 +117,8 @@ class Dir
 
     /**
      * Renvoie le chemin du dossier parent
-     * @param type $path
-     * @return type
+     * @param string $path
+     * @return string
      */
     public static function dirname($path)
     {
@@ -127,8 +127,8 @@ class Dir
 
     /**
      *
-     * @param type $path
-     * @return type
+     * @param string $path
+     * @return bool
      */
     public static function isDir($path)
     {
@@ -137,10 +137,10 @@ class Dir
 
     /**
      *
-     * @param type $path
-     * @param type $ext
-     * @param type $rec
-     * @return type
+     * @param string $path
+     * @param array $ext
+     * @param bool $rec
+     * @return bool
      */
     public static function isEmpty($path, $ext = array(), $rec = true)
     {
@@ -196,8 +196,8 @@ class Dir
                     if ($f !== '.' && $f !== '..') {
                         if (!self::isDir($path . $f)) {
                             if (count($prefix) == 0
-                                or ($prefix_action == 'skip' && !String::hasPrefix($f, $prefix))
-                                or ($prefix_action == 'keep' && String::hasPrefix($f, $prefix))
+                                or ($prefix_action == 'skip' && !Str::hasPrefix($f, $prefix))
+                                or ($prefix_action == 'keep' && Str::hasPrefix($f, $prefix))
                             ) {
                                 if (sizeof($ext)) {
                                     if (in_array(File::getExtension($f), $ext)) {
